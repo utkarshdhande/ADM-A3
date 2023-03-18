@@ -1,0 +1,13 @@
+﻿C_BIRTH_YEAR,CA_ZIP,CD_GENDER,CD_MARITAL_STATUS,CD_CREDIT_RATING,CD_EDUCATION_STATUS,CD_DEP_COUNT
+1924,75817,F,S,Good,College,1
+1982,10587,M,M,Low Risk,College,0
+1929,66668,F,W,Good,4 yr Degree,1
+1992,71749,F,S,Low Risk,4 yr Degree,0
+1955,28371,M,D,Good,Primary,1
+1947,73790,F,U,Low Risk,Primary,0
+1952,38048,F,U,Low Risk,Secondary,1
+1987,62477,M,S,Low Risk,Secondary,0
+1927,24593,M,S,Good,2 yr Degree,1
+1991,83951,M,D,Good,2 yr Degree,0
+1949,94338,F,W,Good,Advanced Degree,1
+1945,65980,M,S,Low Risk,Advanced Degree,0

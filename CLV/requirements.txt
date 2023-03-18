@@ -1,0 +1,9 @@
+snowflake-snowpark-python
+ipykernel
+pyarrow==10.0.1
+numpy
+scikit-learn
+pandas
+joblib
+cachetools
+xgboost
