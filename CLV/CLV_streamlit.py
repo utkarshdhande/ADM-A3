@@ -25,7 +25,7 @@ csv_file = st.file_uploader(label='Upload CSV file with user data', type = 'csv'
 # function to calculate CLV
 def predict(inputs):
     # create Snowflake session
-    session = create_session()
+    # session = create_session()
     # connection = session.connect()
     # cursor = session.cursor()
 
