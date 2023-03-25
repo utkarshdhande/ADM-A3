@@ -5,12 +5,13 @@ from snowflake.snowpark.functions import call_udf
 import streamlit as st
 import snowflake.connector as sf
 import json
+from pathlib import Path
 
 # function to create Snowflake session
 
 def create_session():
     if "snowpark_session" not in st.session_state:
-        session = Session.builder.configs(json.load(open("creds.json"))).create()
+        session = Session.builder.configs(json.load(open(Path("./CLV/creds.json"))).create()
         st.session_state['snowpark_session'] = session
     else:
         session = st.session_state['snowpark_session']
