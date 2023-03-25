@@ -33,15 +33,15 @@ def predict(inputs):
 
     # query the temporary table to calculate CLV
     snowdf_results = Streamlit_data.select(*inputs,
-                        call_udf("clv_xgboost_udf").alias('PREDICTION'), 
-                        (F.col('TOTAL_SALES')).alias('ACTUAL_SALES')
+                    call_udf("clv_xgboost_udf",(*inputs)).alias('PREDICTION')  
                         )
-        # results = cursor.fetchall()
+     # results = cursor.fetchall()
     # cursor.close()
     # connection.close()
 
     # convert results to Pandas DataFrame and return
     # return pd.DataFrame(results, columns=['Customer ID', 'CLV'])
+    return snowdf_results
 
 # Display the contents of the uploaded file as a DataFrame
 if csv_file is not None:
@@ -53,7 +53,8 @@ if csv_file is not None:
         session.use_database('tpcds_xgboost')
         session.use_schema('demo')
         df = session.create_dataframe(df)
-        prediction = predict(df).topandas()
+        df.write.mode('overwrite').save_as_table('Streamlit_data')
+        prediction = predict(df).to_pandas()
         st.write(prediction)
     except Exception as e:
         st.write("Error reading CSV file:", e)
