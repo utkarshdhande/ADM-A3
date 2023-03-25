@@ -7,3 +7,4 @@ pandas
 joblib
 cachetools
 xgboost
+pathlib
